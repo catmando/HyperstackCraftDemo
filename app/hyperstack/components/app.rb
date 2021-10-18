@@ -36,8 +36,8 @@ class App < HyperComponent
   render(DIV, style: { margin: "0 auto", width: "800px" }) do
     MUI::Typography(variant: :h5, align: :center) { "A super simple page editor" }
     Craft::Editor(resolver: {Card: Card.to_n, Button: Button.to_n, Text: Text.to_n, Container: Container.to_n}) do #Card, Button, Text, Container] ) do
+      Topbar()
       MUI::Grid(:container, spacing: 3, style: { paddingTop: "10px" }) do
-        Topbar()
         MUI::Grid(:item, :xs) do
           Craft::Frame() do
             Craft::Element(
